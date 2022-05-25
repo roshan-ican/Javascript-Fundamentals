@@ -119,20 +119,174 @@
 // CHalleng
 
 // 1.create the average of 3 scores
-const calcAverage = (a, b, c) => (a + b + c) / 3;
-console.log(calcAverage(2, 3, 5));
+// const calcAverage = (a, b, c) => (a + b + c) / 3;
+// console.log(calcAverage(2, 3, 5));
 
-const scoreDolphins = calcAverage(45, 55, 71);
-const scoreKoalas = calcAverage(65, 54, 44);
-console.log(scoreDolphins, scoreKoalas);
+// const scoreDolphins = calcAverage(45, 55, 71);
+// const scoreKoalas = calcAverage(65, 54, 44);
+// console.log(scoreDolphins, scoreKoalas);
 
-const checkWinner = function (avgDolphins, avgKoales) {
-  if (avgDolphins >= 2 * avgKoales) {
-    console.log(`Dolphins win ✨ (${avgDolphins} vs. ${avgKoales})`);
-  } else if (avgKoales >= 2 * avgDolphins) {
-    console.log(`Koales win ✨ (${avgKoales} vs. ${avgDolphins})`);
-  } else {
-    console.log(`No team wins`);
-  }
+// const checkWinner = function (avgDolphins, avgKoales) {
+//   if (avgDolphins >= 2 * avgKoales) {
+//     console.log(`Dolphins win ✨ (${avgDolphins} vs. ${avgKoales})`);
+//   } else if (avgKoales >= 2 * avgDolphins) {
+//     console.log(`Koales win ✨ (${avgKoales} vs. ${avgDolphins})`);
+//   } else {
+//     console.log(`No team wins`);
+//   }
+// };
+// checkWinner(22, 239);
+
+// Data Structures Array and objects
+// const friends = ["Guru", "Roshan", "Souha"];
+// console.log(friends);
+
+// const years = new Array(2000, 2001, 2003);
+// console.log(years);
+
+// console.log(years.length);
+// // TO get the last elem from an array
+// console.log(years[years.length - 1]);
+// // replace a elem from a array
+// years[1] = 2002;
+// console.log(years);
+
+// const roshan = [
+//   "Muhammad Roshan",
+//   19,
+//   "developer",
+//   `his friends are ${friends}`,
+// ];
+// console.log(roshan);
+
+// //exercise
+// const calcAge = function (birthYear) {
+//   return 2037 - birthYear;
+// };
+// const y = [2000, 2002, 2003, 2005];
+// const age1 = calcAge(y[0]);
+// const age2 = calcAge(y[1]);
+// const age3 = calcAge(y[2]);
+// const age4 = calcAge(y[y.length - 1]);
+// console.log(age1, age2, age3, age4);
+
+// const ages = [calcAge(y[0]), calcAge(y[1]), calcAge(y[y.length - 1])];
+// console.log(ages);
+
+// // basic array operations
+// // add elements at the end of a array
+// const dost = ["Guru", "Roshan", "Souha"];
+// const newDost = dost.push("Navin");
+// console.log(dost);
+// console.log(newDost);
+
+// // add elements at the start
+// dost.unshift("Blessed");
+// console.log(dost);
+
+// //remove elements
+// const popped = dost.pop(); //Last one
+// console.log(dost);
+// console.log(popped);
+
+// //remove first element
+// const shifted = dost.shift();
+// console.log(dost);
+// console.log(shifted);
+
+// //indexOf returns the position of a element
+// console.log(dost.indexOf("Souha"));
+// //includes return
+// console.log(dost.includes("roshan"));
+// console.log(dost.includes("Roshan"));
+
+// // interview question 1
+// if (true) {
+//   console.log(v);
+//   var v = 2;
+//   let i = 1;
+//   console.log(i);
+// }
+
+// // differnce between == / ===
+
+// // let and const
+
+// // const c = 1;
+// // c = 2;
+// // console.log(c);
+// //const lets you modify if it's a object
+// const d = [1, 2];
+// d.push(3);
+// console.log(d);
+
+// // null and undefined
+
+// // arrow function
+// const profile = {
+//   firstName: "",
+//   lastName: "",
+//   setName: function (name) {
+//     let splitName = (n) => {
+//       let nameArray = n.split(" ");
+//       this.firstName = nameArray[0];
+//       this.lastName = nameArray[1];
+//     };
+//     splitName(name);
+//   },
+// };
+// profile.setName("Muhammad Roshan");
+// console.log(profile.firstName);
+
+// //prototypal inheritance
+// // prototype based inheritance
+// let car = function (model) {
+//   this.model = model;
+// };
+
+// car.prototype.getModel = function () {
+//   return this.model;
+// };
+
+// let toyota = new car("toyota");
+// console.log(toyota.getModel());
+
+// let nissan = new car("nissan");
+// console.log(nissan.getModel());
+
+// // function declaration and function expression
+// console.log(funcD());
+
+// function funcD() {
+//   console.log("function declaration");
+// }
+
+// let funcE = function () {
+//   console.log("function expression");
+// };
+// console.log(funcE());
+
+// // promises
+// // setTimeOut
+// setTimeout(function () {
+//   console.log("a");
+// }, 0);
+// // the above becomes asynchronous
+// console.log("b");
+// console.log("c");
+// array exercises
+// tip calc
+// function calcTip(amount) {
+//   if (amount > 300 && amount < 50) {
+//     return (amount * 15) / 100;
+//   } else {
+//     return (amount * 20) / 100;
+//   }
+// }
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 };
-checkWinner(22, 239);
+console.log(calcTip(55));
+const bills = [125, 555, 44];
+const tip = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+console.log(bills, tip);
