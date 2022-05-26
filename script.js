@@ -419,3 +419,25 @@ for (let i = 0; i < roshan.length; i++) {
   if (typeof roshan[i] === "number") break;
   console.log(roshan[i], typeof roshan[i]);
 }
+// looping backwards
+const souha = [
+  "Souha",
+  "Tourifa",
+  2022 - 2001,
+  "Doctor",
+  ["Ikram", "Zineb", "Roshan"],
+  true,
+];
+
+for (let i = souha.length - 1; i >= 0; i--) {
+  console.log(i, souha[i]);
+}
+
+// loop inside loops
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`---starting exercise--- ${exercise}`);
+
+  for (let rep = 1; rep <= 6; rep++) {
+    console.log(`Exercise ${exercise}: Lifting weight repetition ${rep} 🏋️‍♂️`);
+  }
+}
