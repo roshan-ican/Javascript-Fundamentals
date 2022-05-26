@@ -292,3 +292,50 @@ const tip = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 // total of bills and tips
 const totals = [bills[0] + tip[0], bills[1] + tip[1], bills[2] + tip[2]];
 console.log(bills, tip, totals);
+
+// Objects in Javascript
+// object literal syntax
+const Roshan = {
+  firstName: "Muhammad", //keys are also called property
+  lastName: "Roshan",
+  age: 2037 - 2001,
+  job: "Software Developer",
+  friends: ["Micheal", "Peter", "Guru"],
+};
+console.log(Roshan.firstName);
+
+const nameKey = "Name";
+console.log(Roshan[`first` + `${nameKey}`]);
+console.log(Roshan[`last` + `${nameKey}`]);
+// promt or input
+// const interestedIn = prompt(
+//   "what do you want to know about Roshan? Choose between firstName, lastName, age,job, and friends"
+// );
+// if (Roshan[interestedIn]) {
+//   console.log(Roshan[interestedIn]);
+// } else {
+//   console.log("Wrong Request!");
+// }
+Roshan.location = "India";
+Roshan["Reddit"] = "muhammad_roshan";
+console.log(Roshan);
+
+// challenge
+console.log(
+  `${Roshan.firstName} has ${Roshan.friends.length} friends and his best Friend is called ${Roshan.friends[2]}`
+);
+
+// Object Methods
+const roshan = {
+  firstName: "Muhammad", //keys are also called property
+  lastName: "Roshan",
+  birthYear: 2001,
+  job: "Software Developer",
+  friends: ["Micheal", "Peter", "Guru"],
+  hasDriversLicense: false,
+  calcAge: function () {
+    return 2022 - this.birthYear;
+  },
+};
+
+console.log(roshan.calcAge());
