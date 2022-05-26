@@ -281,97 +281,141 @@
 //     return (amount * 15) / 100;
 //   } else {
 //     return (amount * 20) / 100;
-//   }
-// }
-const calcTip = function (bill) {
-  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-};
-console.log(calcTip(55));
-const bills = [125, 555, 44];
-const tip = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
-// total of bills and tips
-const totals = [bills[0] + tip[0], bills[1] + tip[1], bills[2] + tip[2]];
-console.log(bills, tip, totals);
+// //   }
+// // }
+// const calcTip = function (bill) {
+//   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// };
+// console.log(calcTip(55));
+// const bills = [125, 555, 44];
+// const tip = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+// // total of bills and tips
+// const totals = [bills[0] + tip[0], bills[1] + tip[1], bills[2] + tip[2]];
+// console.log(bills, tip, totals);
 
-// Objects in Javascript
-// object literal syntax
-const Roshan = {
-  firstName: "Muhammad", //keys are also called property
-  lastName: "Roshan",
-  age: 2037 - 2001,
-  job: "Software Developer",
-  friends: ["Micheal", "Peter", "Guru"],
-};
-console.log(Roshan.firstName);
+// // Objects in Javascript
+// // object literal syntax
+// const Roshan = {
+//   firstName: "Muhammad", //keys are also called property
+//   lastName: "Roshan",
+//   age: 2037 - 2001,
+//   job: "Software Developer",
+//   friends: ["Micheal", "Peter", "Guru"],
+// };
+// console.log(Roshan.firstName);
 
-const nameKey = "Name";
-console.log(Roshan[`first` + `${nameKey}`]);
-console.log(Roshan[`last` + `${nameKey}`]);
-// promt or input
-// const interestedIn = prompt(
-// calcAge: function () {
-//   return 2022 - this.birthYear;
-// },
-//   "what do you want to know about Roshan? Choose between firstName, lastName, age,job, and friends"
+// const nameKey = "Name";
+// console.log(Roshan[`first` + `${nameKey}`]);
+// console.log(Roshan[`last` + `${nameKey}`]);
+// // promt or input
+// // const interestedIn = prompt(
+// // calcAge: function () {
+// //   return 2022 - this.birthYear;
+// // },
+// //   "what do you want to know about Roshan? Choose between firstName, lastName, age,job, and friends"
+// // );
+// // if (Roshan[interestedIn]) {
+// //   console.log(Roshan[interestedIn]);
+// // } else {
+// //   console.log("Wrong Request!");
+// // }
+// Roshan.location = "India";
+// Roshan["Reddit"] = "muhammad_roshan";
+// console.log(Roshan);
+
+// // challenge
+// console.log(
+//   `${Roshan.firstName} has ${Roshan.friends.length} friends and his best Friend is called ${Roshan.friends[2]}`
 // );
-// if (Roshan[interestedIn]) {
-//   console.log(Roshan[interestedIn]);
-// } else {
-//   console.log("Wrong Request!");
+
+// // Object Methods
+// const roshan = {
+//   firstName: "Muhammad", //keys are also called property
+//   lastName: "Roshan",
+//   birthYear: 2001,
+//   job: "Software Developer",
+//   friends: ["Micheal", "Peter", "Guru"],
+//   hasDriversLicense: false,
+//   calcAge: function () {
+//     this.age = 2022 - this.birthYear;
+//     return this.age;
+//   },
+// };
+// console.log(roshan.calcAge());
+
+// console.log(roshan.age);
+// // coding challenge 3
+// const mark = {
+//   fullName: "Mark Miller",
+//   mass: 50,
+//   height: 4.1,
+//   calcBMI: function () {
+//     this.bmi = this.mass / this.height ** 2;
+//   },
+// };
+
+// const john = {
+//   fullName: "John Smith",
+//   mass: 60,
+//   height: 3.1,
+//   calcBMI: function () {
+//     this.bmi = this.mass / this.height ** 2;
+//   },
+// };
+// john.calcBMI();
+// mark.calcBMI();
+// console.log(mark.bmi, john.bmi);
+
+// if (mark.bmi > john.bmi) {
+//   console.log(
+//     `${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s BMI (${john.bmi})`
+//   );
+// } else if (john.bmi > mark.bmi) {
+//   console.log(
+//     `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi})`
+//   );
 // }
-Roshan.location = "India";
-Roshan["Reddit"] = "muhammad_roshan";
-console.log(Roshan);
 
-// challenge
-console.log(
-  `${Roshan.firstName} has ${Roshan.friends.length} friends and his best Friend is called ${Roshan.friends[2]}`
-);
+// Loops 😊
+for (let rep = 1; rep <= 30; rep++) {
+  console.log(`Lifting weights repetition ${rep} 🏋️‍♂️`);
+}
+//loop through the array
+const roshan = [
+  "Muhammad",
+  "Roshan",
+  2022 - 2001,
+  "Developer",
+  ["Guru", "Naushad", "Souha"],
+  true,
+];
+const types = [];
+for (let i = 0; i < roshan.length; i++) {
+  // reading from the jonas array
+  console.log(roshan[i], typeof roshan[i]);
+  // filling the types of array
+  // types[i] = typeof roshan[i];
+  types.push(typeof roshan[i]);
+}
+console.log(types);
 
-// Object Methods
-const roshan = {
-  firstName: "Muhammad", //keys are also called property
-  lastName: "Roshan",
-  birthYear: 2001,
-  job: "Software Developer",
-  friends: ["Micheal", "Peter", "Guru"],
-  hasDriversLicense: false,
-  calcAge: function () {
-    this.age = 2022 - this.birthYear;
-    return this.age;
-  },
-};
-console.log(roshan.calcAge());
+// birthYears
+const years = [2001, 2003, 2004, 2006];
+const ages = [];
 
-console.log(roshan.age);
-// coding challenge 3
-const mark = {
-  fullName: "Mark Miller",
-  mass: 50,
-  height: 4.1,
-  calcBMI: function () {
-    this.bmi = this.mass / this.height ** 2;
-  },
-};
+for (let i = 0; i < years.length; i++) {
+  ages.push(2022 - years[i]);
+}
+console.log(ages);
 
-const john = {
-  fullName: "John Smith",
-  mass: 60,
-  height: 3.1,
-  calcBMI: function () {
-    this.bmi = this.mass / this.height ** 2;
-  },
-};
-john.calcBMI();
-mark.calcBMI();
-console.log(mark.bmi, john.bmi);
-
-if (mark.bmi > john.bmi) {
-  console.log(
-    `${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s BMI (${john.bmi})`
-  );
-} else if (john.bmi > mark.bmi) {
-  console.log(
-    `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi})`
-  );
+// Continue and Break
+console.log("-----ONLY STRINGS-----");
+for (let i = 0; i < roshan.length; i++) {
+  if (typeof roshan[i] !== "string") continue;
+  console.log(roshan[i], typeof roshan[i]);
+}
+console.log("-----BREAK WITH NUMBER-----");
+for (let i = 0; i < roshan.length; i++) {
+  if (typeof roshan[i] === "number") break;
+  console.log(roshan[i], typeof roshan[i]);
 }
