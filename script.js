@@ -309,6 +309,9 @@ console.log(Roshan[`first` + `${nameKey}`]);
 console.log(Roshan[`last` + `${nameKey}`]);
 // promt or input
 // const interestedIn = prompt(
+// calcAge: function () {
+//   return 2022 - this.birthYear;
+// },
 //   "what do you want to know about Roshan? Choose between firstName, lastName, age,job, and friends"
 // );
 // if (Roshan[interestedIn]) {
@@ -334,8 +337,41 @@ const roshan = {
   friends: ["Micheal", "Peter", "Guru"],
   hasDriversLicense: false,
   calcAge: function () {
-    return 2022 - this.birthYear;
+    this.age = 2022 - this.birthYear;
+    return this.age;
+  },
+};
+console.log(roshan.calcAge());
+
+console.log(roshan.age);
+// coding challenge 3
+const mark = {
+  fullName: "Mark Miller",
+  mass: 50,
+  height: 4.1,
+  calcBMI: function () {
+    this.bmi = this.mass / this.height ** 2;
   },
 };
 
-console.log(roshan.calcAge());
+const john = {
+  fullName: "John Smith",
+  mass: 60,
+  height: 3.1,
+  calcBMI: function () {
+    this.bmi = this.mass / this.height ** 2;
+  },
+};
+john.calcBMI();
+mark.calcBMI();
+console.log(mark.bmi, john.bmi);
+
+if (mark.bmi > john.bmi) {
+  console.log(
+    `${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s BMI (${john.bmi})`
+  );
+} else if (john.bmi > mark.bmi) {
+  console.log(
+    `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi})`
+  );
+}
