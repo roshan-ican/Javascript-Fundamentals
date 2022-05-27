@@ -1,497 +1,505 @@
-// // // "use strict";
-// // // let hasDriversLicense = false;
-// // // const passTest = true;
+// // // // "use strict";
+// // // // let hasDriversLicense = false;
+// // // // const passTest = true;
 
-// // // if (passTest) hasDriversLicense = true;
-// // // if (hasDriversLicense) console.log("I can drive");
+// // // // if (passTest) hasDriversLicense = true;
+// // // // if (hasDriversLicense) console.log("I can drive");
 
-// // // functions can be used sereval times in the code by invoking it
-// // function logger() {
-// //   console.log("Hi I am a logger");
+// // // // functions can be used sereval times in the code by invoking it
+// // // function logger() {
+// // //   console.log("Hi I am a logger");
+// // // }
+// // // // Below we invoked the function
+// // // // Calling / running / invoking the function
+// // // logger();
+
+// // // // function with params
+// // // function foodProcessor(apples, oranges) {
+// // //   const juice = `Juice with ${apples} apples and ${oranges} oranges`;
+// // //   return juice;
+// // // }
+// // // const Juicy = foodProcessor(8, 5);
+// // // console.log(Juicy);
+// // // console.log(foodProcessor(8, 5));
+
+// // // // BIRTH CALCULATION
+// // // // In function declarations
+// // // function ageCalc(birthYear) {
+// // //   return 2022 - birthYear;
+// // // }
+// // // const auntyAge = ageCalc(1954);
+// // // console.log(auntyAge);
+// // // // Expression function for
+// // // const age = function (dob) {
+// // //   return 2022 - dob;
+// // // };
+// // // const roshan = age(2002);
+
+// // // console.log(auntyAge, roshan);
+
+// // // // Arrow Function
+// // // const Year = (yearOfBirth) => 2022 - yearOfBirth;
+// // // const souha = Year(2003);
+// // // console.log(auntyAge, roshan, souha);
+
+// // // // Arrow Function with parameters
+// // // const yearsUntilRetirement = (dateOfBirth, firstName) => {
+// // //   const yourAge = 2022 - dateOfBirth;
+// // //   const retirementAge = 65 - yourAge;
+// // //   // return retirementAge;
+// // //   return `${firstName} retires at the age of ${retirementAge}`;
+// // // };
+// // // console.log(yearsUntilRetirement(2002, "Roshan"));
+// // // console.log(yearsUntilRetirement(2003, "Souha"));
+
+// // // Function calling another function
+// // function cutFruitPieces(fruit) {
+// //   return 4 * fruit;
 // // }
-// // // Below we invoked the function
-// // // Calling / running / invoking the function
-// // logger();
 
-// // // function with params
-// // function foodProcessor(apples, oranges) {
-// //   const juice = `Juice with ${apples} apples and ${oranges} oranges`;
+// // function fruitProcessor(apples, oranges) {
+// //   console.log(apples, oranges);
+// //   const applePieces = cutFruitPieces(apples);
+// //   const orangePieces = cutFruitPieces(oranges);
+// //   const juice = `Juice with ${applePieces} piece of apples and ${orangePieces} pieces of oranges`;
 // //   return juice;
 // // }
-// // const Juicy = foodProcessor(8, 5);
-// // console.log(Juicy);
-// // console.log(foodProcessor(8, 5));
+// // console.log(applePieces);
+// // console.log(orangePieces);
 
-// // // BIRTH CALCULATION
-// // // In function declarations
-// // function ageCalc(birthYear) {
-// //   return 2022 - birthYear;
+// // console.log(fruitProcessor(3, 4));
+// // // var jsdom = require("jsdom");
+// // // var JSDOM = jsdom.JSDOM;
+// // // const body = document.body;
+// // // const div = document.querySelector("div");
+// // // const span1 = document.querySelector("#hi");
+// // // const span2 = document.querySelector("#bye");
+// // // console.log(span1.id);
+// // for (let index = 0; index < array.length; index++) {}
+// // Function calling a function
+// // Machine for cutting the fruits
+// // function cutFruitPieces(fruit) {
+// //   return fruit * 4;
 // // }
-// // const auntyAge = ageCalc(1954);
-// // console.log(auntyAge);
-// // // Expression function for
-// // const age = function (dob) {
-// //   return 2022 - dob;
-// // };
-// // const roshan = age(2002);
+// // function fruitProcessor(apples, oranges) {
+// //   //calling the machine to cut fruits
+// //   const applePieces = cutFruitPieces(apples);
+// //   const orangePieces = cutFruitPieces(oranges);
 
-// // console.log(auntyAge, roshan);
-
-// // // Arrow Function
-// // const Year = (yearOfBirth) => 2022 - yearOfBirth;
-// // const souha = Year(2003);
-// // console.log(auntyAge, roshan, souha);
-
-// // // Arrow Function with parameters
-// // const yearsUntilRetirement = (dateOfBirth, firstName) => {
-// //   const yourAge = 2022 - dateOfBirth;
-// //   const retirementAge = 65 - yourAge;
+// //   const juice = `Juice with ${applePieces} pieces of apples and ${orangePieces} pieces of oranges.`;
+// //   return juice;
+// // }
+// // console.log(fruitProcessor(4, 5));
+// // const yearsUntilRetirement = (birthYear, name) => {
+// //   const age = 2037 - birthYear;
+// //   const retirementAge = 65 - age;
 // //   // return retirementAge;
-// //   return `${firstName} retires at the age of ${retirementAge}`;
+// //   return `${name} retires in ${retirementAge} years`;
 // // };
-// // console.log(yearsUntilRetirement(2002, "Roshan"));
+// // console.log(yearsUntilRetirement(2001, "Roshan"));
+
+// // Reviewing the function
+// // const calcAge = function (birthYear) {
+// //   return 2037 - birthYear;
+// // };
+// // const yearsUntilRetirement = function (birthYear, firstName) {
+// //   const age = calcAge(birthYear);
+// //   const retirement = 65 - age;
+
+// //   if (retirement > 0) {
+// //     console.log(`${firstName} retires in ${retirement} years`);
+// //     return retirement;
+// //   } else {
+// //     console.log(`${firstName} has already retired`);
+// //     return -1;
+// //   }
+// // };
 // // console.log(yearsUntilRetirement(2003, "Souha"));
+// // console.log(yearsUntilRetirement(2001, "Roshan"));
+// // CHalleng
 
-// // Function calling another function
-// function cutFruitPieces(fruit) {
-//   return 4 * fruit;
-// }
+// // 1.create the average of 3 scores
+// // const calcAverage = (a, b, c) => (a + b + c) / 3;
+// // console.log(calcAverage(2, 3, 5));
 
-// function fruitProcessor(apples, oranges) {
-//   console.log(apples, oranges);
-//   const applePieces = cutFruitPieces(apples);
-//   const orangePieces = cutFruitPieces(oranges);
-//   const juice = `Juice with ${applePieces} piece of apples and ${orangePieces} pieces of oranges`;
-//   return juice;
-// }
-// console.log(applePieces);
-// console.log(orangePieces);
+// // const scoreDolphins = calcAverage(45, 55, 71);
+// // const scoreKoalas = calcAverage(65, 54, 44);
+// // console.log(scoreDolphins, scoreKoalas);
 
-// console.log(fruitProcessor(3, 4));
-// // var jsdom = require("jsdom");
-// // var JSDOM = jsdom.JSDOM;
-// // const body = document.body;
-// // const div = document.querySelector("div");
-// // const span1 = document.querySelector("#hi");
-// // const span2 = document.querySelector("#bye");
-// // console.log(span1.id);
-// for (let index = 0; index < array.length; index++) {}
-// Function calling a function
-// Machine for cutting the fruits
-// function cutFruitPieces(fruit) {
-//   return fruit * 4;
-// }
-// function fruitProcessor(apples, oranges) {
-//   //calling the machine to cut fruits
-//   const applePieces = cutFruitPieces(apples);
-//   const orangePieces = cutFruitPieces(oranges);
+// // const checkWinner = function (avgDolphins, avgKoales) {
+// //   if (avgDolphins >= 2 * avgKoales) {
+// //     console.log(`Dolphins win ✨ (${avgDolphins} vs. ${avgKoales})`);
+// //   } else if (avgKoales >= 2 * avgDolphins) {
+// //     console.log(`Koales win ✨ (${avgKoales} vs. ${avgDolphins})`);
+// //   } else {
+// //     console.log(`No team wins`);
+// //   }
+// // };
+// // checkWinner(22, 239);
 
-//   const juice = `Juice with ${applePieces} pieces of apples and ${orangePieces} pieces of oranges.`;
-//   return juice;
-// }
-// console.log(fruitProcessor(4, 5));
-// const yearsUntilRetirement = (birthYear, name) => {
-//   const age = 2037 - birthYear;
-//   const retirementAge = 65 - age;
-//   // return retirementAge;
-//   return `${name} retires in ${retirementAge} years`;
-// };
-// console.log(yearsUntilRetirement(2001, "Roshan"));
+// // Data Structures Array and objects
+// // const friends = ["Guru", "Roshan", "Souha"];
+// // console.log(friends);
 
-// Reviewing the function
-// const calcAge = function (birthYear) {
-//   return 2037 - birthYear;
-// };
-// const yearsUntilRetirement = function (birthYear, firstName) {
-//   const age = calcAge(birthYear);
-//   const retirement = 65 - age;
+// // const years = new Array(2000, 2001, 2003);
+// // console.log(years);
 
-//   if (retirement > 0) {
-//     console.log(`${firstName} retires in ${retirement} years`);
-//     return retirement;
-//   } else {
-//     console.log(`${firstName} has already retired`);
-//     return -1;
-//   }
-// };
-// console.log(yearsUntilRetirement(2003, "Souha"));
-// console.log(yearsUntilRetirement(2001, "Roshan"));
-// CHalleng
+// // console.log(years.length);
+// // // TO get the last elem from an array
+// // console.log(years[years.length - 1]);
+// // // replace a elem from a array
+// // years[1] = 2002;
+// // console.log(years);
 
-// 1.create the average of 3 scores
-// const calcAverage = (a, b, c) => (a + b + c) / 3;
-// console.log(calcAverage(2, 3, 5));
+// // const roshan = [
+// //   "Muhammad Roshan",
+// //   19,
+// //   "developer",
+// //   `his friends are ${friends}`,
+// // ];
+// // console.log(roshan);
 
-// const scoreDolphins = calcAverage(45, 55, 71);
-// const scoreKoalas = calcAverage(65, 54, 44);
-// console.log(scoreDolphins, scoreKoalas);
+// // //exercise
+// // const calcAge = function (birthYear) {
+// //   return 2037 - birthYear;
+// // };
+// // const y = [2000, 2002, 2003, 2005];
+// // const age1 = calcAge(y[0]);
+// // const age2 = calcAge(y[1]);
+// // const age3 = calcAge(y[2]);
+// // const age4 = calcAge(y[y.length - 1]);
+// // console.log(age1, age2, age3, age4);
 
-// const checkWinner = function (avgDolphins, avgKoales) {
-//   if (avgDolphins >= 2 * avgKoales) {
-//     console.log(`Dolphins win ✨ (${avgDolphins} vs. ${avgKoales})`);
-//   } else if (avgKoales >= 2 * avgDolphins) {
-//     console.log(`Koales win ✨ (${avgKoales} vs. ${avgDolphins})`);
-//   } else {
-//     console.log(`No team wins`);
-//   }
-// };
-// checkWinner(22, 239);
+// // const ages = [calcAge(y[0]), calcAge(y[1]), calcAge(y[y.length - 1])];
+// // console.log(ages);
 
-// Data Structures Array and objects
-// const friends = ["Guru", "Roshan", "Souha"];
-// console.log(friends);
+// // // basic array operations
+// // // add elements at the end of a array
+// // const dost = ["Guru", "Roshan", "Souha"];
+// // const newDost = dost.push("Navin");
+// // console.log(dost);
+// // console.log(newDost);
 
-// const years = new Array(2000, 2001, 2003);
-// console.log(years);
+// // // add elements at the start
+// // dost.unshift("Blessed");
+// // console.log(dost);
 
-// console.log(years.length);
-// // TO get the last elem from an array
-// console.log(years[years.length - 1]);
-// // replace a elem from a array
-// years[1] = 2002;
-// console.log(years);
+// // //remove elements
+// // const popped = dost.pop(); //Last one
+// // console.log(dost);
+// // console.log(popped);
 
-// const roshan = [
-//   "Muhammad Roshan",
-//   19,
-//   "developer",
-//   `his friends are ${friends}`,
-// ];
-// console.log(roshan);
+// // //remove first element
+// // const shifted = dost.shift();
+// // console.log(dost);
+// // console.log(shifted);
 
-// //exercise
-// const calcAge = function (birthYear) {
-//   return 2037 - birthYear;
-// };
-// const y = [2000, 2002, 2003, 2005];
-// const age1 = calcAge(y[0]);
-// const age2 = calcAge(y[1]);
-// const age3 = calcAge(y[2]);
-// const age4 = calcAge(y[y.length - 1]);
-// console.log(age1, age2, age3, age4);
+// // //indexOf returns the position of a element
+// // console.log(dost.indexOf("Souha"));
+// // //includes return
+// // console.log(dost.includes("roshan"));
+// // console.log(dost.includes("Roshan"));
 
-// const ages = [calcAge(y[0]), calcAge(y[1]), calcAge(y[y.length - 1])];
-// console.log(ages);
+// // // interview question 1
+// // if (true) {
+// //   console.log(v);
+// //   var v = 2;
+// //   let i = 1;
+// //   console.log(i);
+// // }
 
-// // basic array operations
-// // add elements at the end of a array
-// const dost = ["Guru", "Roshan", "Souha"];
-// const newDost = dost.push("Navin");
-// console.log(dost);
-// console.log(newDost);
+// // // differnce between == / ===
 
-// // add elements at the start
-// dost.unshift("Blessed");
-// console.log(dost);
+// // // let and const
 
-// //remove elements
-// const popped = dost.pop(); //Last one
-// console.log(dost);
-// console.log(popped);
+// // // const c = 1;
+// // // c = 2;
+// // // console.log(c);
+// // //const lets you modify if it's a object
+// // const d = [1, 2];
+// // d.push(3);
+// // console.log(d);
 
-// //remove first element
-// const shifted = dost.shift();
-// console.log(dost);
-// console.log(shifted);
+// // // null and undefined
 
-// //indexOf returns the position of a element
-// console.log(dost.indexOf("Souha"));
-// //includes return
-// console.log(dost.includes("roshan"));
-// console.log(dost.includes("Roshan"));
+// // // arrow function
+// // const profile = {
+// //   firstName: "",
+// //   lastName: "",
+// //   setName: function (name) {
+// //     let splitName = (n) => {
+// //       let nameArray = n.split(" ");
+// //       this.firstName = nameArray[0];
+// //       this.lastName = nameArray[1];
+// //     };
+// //     splitName(name);
+// //   },
+// // };
+// // profile.setName("Muhammad Roshan");
+// // console.log(profile.firstName);
 
-// // interview question 1
-// if (true) {
-//   console.log(v);
-//   var v = 2;
-//   let i = 1;
-//   console.log(i);
-// }
+// // //prototypal inheritance
+// // // prototype based inheritance
+// // let car = function (model) {
+// //   this.model = model;
+// // };
 
-// // differnce between == / ===
+// // car.prototype.getModel = function () {
+// //   return this.model;
+// // };
 
-// // let and const
+// // let toyota = new car("toyota");
+// // console.log(toyota.getModel());
 
-// // const c = 1;
-// // c = 2;
-// // console.log(c);
-// //const lets you modify if it's a object
-// const d = [1, 2];
-// d.push(3);
-// console.log(d);
+// // let nissan = new car("nissan");
+// // console.log(nissan.getModel());
 
-// // null and undefined
+// // // function declaration and function expression
+// // console.log(funcD());
 
-// // arrow function
-// const profile = {
-//   firstName: "",
-//   lastName: "",
-//   setName: function (name) {
-//     let splitName = (n) => {
-//       let nameArray = n.split(" ");
-//       this.firstName = nameArray[0];
-//       this.lastName = nameArray[1];
-//     };
-//     splitName(name);
-//   },
-// };
-// profile.setName("Muhammad Roshan");
-// console.log(profile.firstName);
+// // function funcD() {
+// //   console.log("function declaration");
+// // }
 
-// //prototypal inheritance
-// // prototype based inheritance
-// let car = function (model) {
-//   this.model = model;
-// };
+// // let funcE = function () {
+// //   console.log("function expression");
+// // };
+// // console.log(funcE());
 
-// car.prototype.getModel = function () {
-//   return this.model;
-// };
+// // // promises
+// // // setTimeOut
+// // setTimeout(function () {
+// //   console.log("a");
+// // }, 0);
+// // // the above becomes asynchronous
+// // console.log("b");
+// // console.log("c");
+// // array exercises
+// // tip calc
+// // function calcTip(amount) {
+// //   if (amount > 300 && amount < 50) {
+// //     return (amount * 15) / 100;
+// //   } else {
+// //     return (amount * 20) / 100;
+// // //   }
+// // // }
+// // const calcTip = function (bill) {
+// //   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// // };
+// // console.log(calcTip(55));
+// // const bills = [125, 555, 44];
+// // const tip = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+// // // total of bills and tips
+// // const totals = [bills[0] + tip[0], bills[1] + tip[1], bills[2] + tip[2]];
+// // console.log(bills, tip, totals);
 
-// let toyota = new car("toyota");
-// console.log(toyota.getModel());
+// // // Objects in Javascript
+// // // object literal syntax
+// // const Roshan = {
+// //   firstName: "Muhammad", //keys are also called property
+// //   lastName: "Roshan",
+// //   age: 2037 - 2001,
+// //   job: "Software Developer",
+// //   friends: ["Micheal", "Peter", "Guru"],
+// // };
+// // console.log(Roshan.firstName);
 
-// let nissan = new car("nissan");
-// console.log(nissan.getModel());
+// // const nameKey = "Name";
+// // console.log(Roshan[`first` + `${nameKey}`]);
+// // console.log(Roshan[`last` + `${nameKey}`]);
+// // // promt or input
+// // // const interestedIn = prompt(
+// // // calcAge: function () {
+// // //   return 2022 - this.birthYear;
+// // // },
+// // //   "what do you want to know about Roshan? Choose between firstName, lastName, age,job, and friends"
+// // // );
+// // // if (Roshan[interestedIn]) {
+// // //   console.log(Roshan[interestedIn]);
+// // // } else {
+// // //   console.log("Wrong Request!");
+// // // }
+// // Roshan.location = "India";
+// // Roshan["Reddit"] = "muhammad_roshan";
+// // console.log(Roshan);
 
-// // function declaration and function expression
-// console.log(funcD());
+// // // challenge
+// // console.log(
+// //   `${Roshan.firstName} has ${Roshan.friends.length} friends and his best Friend is called ${Roshan.friends[2]}`
+// // );
 
-// function funcD() {
-//   console.log("function declaration");
-// }
+// // // Object Methods
+// // const roshan = {
+// //   firstName: "Muhammad", //keys are also called property
+// //   lastName: "Roshan",
+// //   birthYear: 2001,
+// //   job: "Software Developer",
+// //   friends: ["Micheal", "Peter", "Guru"],
+// //   hasDriversLicense: false,
+// //   calcAge: function () {
+// //     this.age = 2022 - this.birthYear;
+// //     return this.age;
+// //   },
+// // };
+// // console.log(roshan.calcAge());
 
-// let funcE = function () {
-//   console.log("function expression");
-// };
-// console.log(funcE());
+// // console.log(roshan.age);
+// // // coding challenge 3
+// // const mark = {
+// //   fullName: "Mark Miller",
+// //   mass: 50,
+// //   height: 4.1,
+// //   calcBMI: function () {
+// // //     this.bmi = this.mass / this.height ** 2;
+// // //   },
+// // // };
 
-// // promises
-// // setTimeOut
-// setTimeout(function () {
-//   console.log("a");
-// }, 0);
-// // the above becomes asynchronous
-// console.log("b");
-// console.log("c");
-// array exercises
-// tip calc
-// function calcTip(amount) {
-//   if (amount > 300 && amount < 50) {
-//     return (amount * 15) / 100;
-//   } else {
-//     return (amount * 20) / 100;
+// // // const john = {
+// // //   fullName: "John Smith",
+// // //   mass: 60,
+// // //   height: 3.1,
+// // //   calcBMI: function () {
+// // //     this.bmi = this.mass / this.height ** 2;
+// // //   },
+// // // };
+// // // john.calcBMI();
+// // // mark.calcBMI();
+// // // console.log(mark.bmi, john.bmi);
+
+// // // if (mark.bmi > john.bmi) {
+// // //   console.log(
+// // //     `${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s BMI (${john.bmi})`
+// // //   );
+// // // } else if (john.bmi > mark.bmi) {
+// // //   console.log(
+// // //     `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi})`
+// // //   );
+// // // }
+
+// // // Loops 😊
+// // for (let rep = 1; rep <= 30; rep++) {
+// //   console.log(`Lifting weights repetition ${rep} 🏋️‍♂️`);
+// // }
+// // //loop through the array
+// // const roshan = [
+// //   "Muhammad",
+// //   "Roshan",
+// //   2022 - 2001,
+// //   "Developer",
+// //   ["Guru", "Naushad", "Souha"],
+// //   true,
+// // ];
+// // const types = [];
+// // for (let i = 0; i < roshan.length; i++) {
+// //   // reading from the jonas array
+// //   console.log(roshan[i], typeof roshan[i]);
+// //   // filling the types of array
+// //   // types[i] = typeof roshan[i];
+// //   types.push(typeof roshan[i]);
+// // }
+// // console.log(types);
+
+// // // birthYears
+// // const years = [2001, 2003, 2004, 2006];
+// // const ages = [];
+
+// // for (let i = 0; i < years.length; i++) {
+// //   ages.push(2022 - years[i]);
+// // }
+// // console.log(ages);
+
+// // // Continue and Break
+// // console.log("-----ONLY STRINGS-----");
+// // for (let i = 0; i < roshan.length; i++) {
+// //   if (typeof roshan[i] !== "string") continue;
+// //   console.log(roshan[i], typeof roshan[i]);
+// // }
+// // console.log("-----BREAK WITH NUMBER-----");
+// // for (let i = 0; i < roshan.length; i++) {
+// //   if (typeof roshan[i] === "number") break;
+// //   console.log(roshan[i], typeof roshan[i]);
+// // }
+// // // looping backwards
+// // const souha = [
+// //   "Souha",
+// //   "Tourifa",
+// //   2022 - 2001,
+// //   "Doctor",
+// //   ["Ikram", "Zineb", "Roshan"],
+// //   true,
+// // ];
+
+// // for (let i = souha.length - 1; i >= 0; i--) {
+// //   console.log(i, souha[i]);
+// // }
+
+// // // loop inside loops
+// // for (let exercise = 1; exercise < 4; exercise++) {
+// //   console.log(`---starting exercise--- ${exercise}`);
+
+// //   for (let rep = 1; rep <= 6; rep++) {
+// //     console.log(`Exercise ${exercise}: Lifting weight repetition ${rep} 🏋️‍♂️`);
 // //   }
 // // }
+// // The While Loop
+// // let rep = 1;
+// // while (rep <= 10) {
+// //   console.log(`WHILE: Lifting weights repetition ${rep} 🏋️‍♂️`);
+// //   rep++;
+// // }
+// // roll a dice until you get 6
+// // let dice = Math.trunc(Math.random() * 6) + 1;
+// // console.log(dice);
+
+// // while (dice !== 6) {
+// //   console.log(`You rolled a ${dice}`);
+// //   dice = Math.trunc(Math.random() * 6) + 1;
+// // }
+// // let rep = 1;
+// // while (rep <= 10) {
+// //   // console.log(`WHILE: Lifting rep ${rep}🏋️‍♂️`);
+// //   rep++;
+// // }
+// // // Roll of dice
+// // let dice = Math.trunc(Math.random() * 6) + 1;
+
+// // while (dice !== 6) {
+// //   console.log(`you rolled a ${dice}`);
+// //   dice = Math.trunc(Math.random() * 6) + 1;
+// //   if (dice === 6) console.log("Loop is about to die");
+// // }
+// // Challenge
 // const calcTip = function (bill) {
 //   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 // };
-// console.log(calcTip(55));
-// const bills = [125, 555, 44];
-// const tip = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
-// // total of bills and tips
-// const totals = [bills[0] + tip[0], bills[1] + tip[1], bills[2] + tip[2]];
-// console.log(bills, tip, totals);
+// const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+// const tips = [];
+// const totals = [];
 
-// // Objects in Javascript
-// // object literal syntax
-// const Roshan = {
-//   firstName: "Muhammad", //keys are also called property
-//   lastName: "Roshan",
-//   age: 2037 - 2001,
-//   job: "Software Developer",
-//   friends: ["Micheal", "Peter", "Guru"],
-// };
-// console.log(Roshan.firstName);
-
-// const nameKey = "Name";
-// console.log(Roshan[`first` + `${nameKey}`]);
-// console.log(Roshan[`last` + `${nameKey}`]);
-// // promt or input
-// // const interestedIn = prompt(
-// // calcAge: function () {
-// //   return 2022 - this.birthYear;
-// // },
-// //   "what do you want to know about Roshan? Choose between firstName, lastName, age,job, and friends"
-// // );
-// // if (Roshan[interestedIn]) {
-// //   console.log(Roshan[interestedIn]);
-// // } else {
-// //   console.log("Wrong Request!");
-// // }
-// Roshan.location = "India";
-// Roshan["Reddit"] = "muhammad_roshan";
-// console.log(Roshan);
-
-// // challenge
-// console.log(
-//   `${Roshan.firstName} has ${Roshan.friends.length} friends and his best Friend is called ${Roshan.friends[2]}`
-// );
-
-// // Object Methods
-// const roshan = {
-//   firstName: "Muhammad", //keys are also called property
-//   lastName: "Roshan",
-//   birthYear: 2001,
-//   job: "Software Developer",
-//   friends: ["Micheal", "Peter", "Guru"],
-//   hasDriversLicense: false,
-//   calcAge: function () {
-//     this.age = 2022 - this.birthYear;
-//     return this.age;
-//   },
-// };
-// console.log(roshan.calcAge());
-
-// console.log(roshan.age);
-// // coding challenge 3
-// const mark = {
-//   fullName: "Mark Miller",
-//   mass: 50,
-//   height: 4.1,
-//   calcBMI: function () {
-// //     this.bmi = this.mass / this.height ** 2;
-// //   },
-// // };
-
-// // const john = {
-// //   fullName: "John Smith",
-// //   mass: 60,
-// //   height: 3.1,
-// //   calcBMI: function () {
-// //     this.bmi = this.mass / this.height ** 2;
-// //   },
-// // };
-// // john.calcBMI();
-// // mark.calcBMI();
-// // console.log(mark.bmi, john.bmi);
-
-// // if (mark.bmi > john.bmi) {
-// //   console.log(
-// //     `${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s BMI (${john.bmi})`
-// //   );
-// // } else if (john.bmi > mark.bmi) {
-// //   console.log(
-// //     `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi})`
-// //   );
-// // }
-
-// // Loops 😊
-// for (let rep = 1; rep <= 30; rep++) {
-//   console.log(`Lifting weights repetition ${rep} 🏋️‍♂️`);
+// for (let i = 0; i < bills.length; i++) {
+//   const tip = calcTip(bills[i]);
+//   tips.push(tip);
+//   totals.push(tip + bills[i]);
 // }
-// //loop through the array
-// const roshan = [
-//   "Muhammad",
-//   "Roshan",
-//   2022 - 2001,
-//   "Developer",
-//   ["Guru", "Naushad", "Souha"],
-//   true,
-// ];
-// const types = [];
-// for (let i = 0; i < roshan.length; i++) {
-//   // reading from the jonas array
-//   console.log(roshan[i], typeof roshan[i]);
-//   // filling the types of array
-//   // types[i] = typeof roshan[i];
-//   types.push(typeof roshan[i]);
-// }
-// console.log(types);
+// console.log(bills, tips, totals);
+// // bonus challenge
 
-// // birthYears
-// const years = [2001, 2003, 2004, 2006];
-// const ages = [];
-
-// for (let i = 0; i < years.length; i++) {
-//   ages.push(2022 - years[i]);
-// }
-// console.log(ages);
-
-// // Continue and Break
-// console.log("-----ONLY STRINGS-----");
-// for (let i = 0; i < roshan.length; i++) {
-//   if (typeof roshan[i] !== "string") continue;
-//   console.log(roshan[i], typeof roshan[i]);
-// }
-// console.log("-----BREAK WITH NUMBER-----");
-// for (let i = 0; i < roshan.length; i++) {
-//   if (typeof roshan[i] === "number") break;
-//   console.log(roshan[i], typeof roshan[i]);
-// }
-// // looping backwards
-// const souha = [
-//   "Souha",
-//   "Tourifa",
-//   2022 - 2001,
-//   "Doctor",
-//   ["Ikram", "Zineb", "Roshan"],
-//   true,
-// ];
-
-// for (let i = souha.length - 1; i >= 0; i--) {
-//   console.log(i, souha[i]);
-// }
-
-// // loop inside loops
-// for (let exercise = 1; exercise < 4; exercise++) {
-//   console.log(`---starting exercise--- ${exercise}`);
-
-//   for (let rep = 1; rep <= 6; rep++) {
-//     console.log(`Exercise ${exercise}: Lifting weight repetition ${rep} 🏋️‍♂️`);
+// const calcAverage = function (arr) {
+//   let sum = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     // sum = sum + arr[i]
+//     sum += arr[i];
 //   }
-// }
-// The While Loop
-// let rep = 1;
-// while (rep <= 10) {
-//   console.log(`WHILE: Lifting weights repetition ${rep} 🏋️‍♂️`);
-//   rep++;
-// }
-// roll a dice until you get 6
-// let dice = Math.trunc(Math.random() * 6) + 1;
-// console.log(dice);
+//   return sum / arr.length;
+// };
+// console.log(calcAverage([23, 234, 33, 3]));
+// console.log(calcAverage(totals));
+// console.log(calcAverage(tips));
+// 'use strict';
 
-// while (dice !== 6) {
-//   console.log(`You rolled a ${dice}`);
-//   dice = Math.trunc(Math.random() * 6) + 1;
-// }
-// let rep = 1;
-// while (rep <= 10) {
-//   // console.log(`WHILE: Lifting rep ${rep}🏋️‍♂️`);
-//   rep++;
-// }
-// // Roll of dice
-// let dice = Math.trunc(Math.random() * 6) + 1;
+// const x = '23';
+// if (x === 23) console.log(23);
 
-// while (dice !== 6) {
-//   console.log(`you rolled a ${dice}`);
-//   dice = Math.trunc(Math.random() * 6) + 1;
-//   if (dice === 6) console.log("Loop is about to die");
-// }
-// Challenge
-const calcTip = function (bill) {
-  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-};
-const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
-const tips = [];
-const totals = [];
-
-for (let i = 0; i < bills.length; i++) {
-  const tip = calcTip(bills[i]);
-  tips.push(tip);
-  totals.push(tip + bills[i]);
-}
-console.log(bills, tips, totals);
-// bonus challenge
-
-const calcAverage = function (arr) {
-  let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    // sum = sum + arr[i]
-    sum += arr[i];
-  }
-  return sum / arr.length;
-};
-console.log(calcAverage([23, 234, 33, 3]));
-console.log(calcAverage(totals));
-console.log(calcAverage(tips));
+// const calcAge = birthYear => 2022 - birthYear;
+// console.log(calcAge(2002));
+//Finally DOM Manipulation
