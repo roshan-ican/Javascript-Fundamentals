@@ -350,94 +350,113 @@
 //   mass: 50,
 //   height: 4.1,
 //   calcBMI: function () {
-//     this.bmi = this.mass / this.height ** 2;
-//   },
-// };
+// //     this.bmi = this.mass / this.height ** 2;
+// //   },
+// // };
 
-// const john = {
-//   fullName: "John Smith",
-//   mass: 60,
-//   height: 3.1,
-//   calcBMI: function () {
-//     this.bmi = this.mass / this.height ** 2;
-//   },
-// };
-// john.calcBMI();
-// mark.calcBMI();
-// console.log(mark.bmi, john.bmi);
+// // const john = {
+// //   fullName: "John Smith",
+// //   mass: 60,
+// //   height: 3.1,
+// //   calcBMI: function () {
+// //     this.bmi = this.mass / this.height ** 2;
+// //   },
+// // };
+// // john.calcBMI();
+// // mark.calcBMI();
+// // console.log(mark.bmi, john.bmi);
 
-// if (mark.bmi > john.bmi) {
-//   console.log(
-//     `${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s BMI (${john.bmi})`
-//   );
-// } else if (john.bmi > mark.bmi) {
-//   console.log(
-//     `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi})`
-//   );
+// // if (mark.bmi > john.bmi) {
+// //   console.log(
+// //     `${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s BMI (${john.bmi})`
+// //   );
+// // } else if (john.bmi > mark.bmi) {
+// //   console.log(
+// //     `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi})`
+// //   );
+// // }
+
+// // Loops 😊
+// for (let rep = 1; rep <= 30; rep++) {
+//   console.log(`Lifting weights repetition ${rep} 🏋️‍♂️`);
+// }
+// //loop through the array
+// const roshan = [
+//   "Muhammad",
+//   "Roshan",
+//   2022 - 2001,
+//   "Developer",
+//   ["Guru", "Naushad", "Souha"],
+//   true,
+// ];
+// const types = [];
+// for (let i = 0; i < roshan.length; i++) {
+//   // reading from the jonas array
+//   console.log(roshan[i], typeof roshan[i]);
+//   // filling the types of array
+//   // types[i] = typeof roshan[i];
+//   types.push(typeof roshan[i]);
+// }
+// console.log(types);
+
+// // birthYears
+// const years = [2001, 2003, 2004, 2006];
+// const ages = [];
+
+// for (let i = 0; i < years.length; i++) {
+//   ages.push(2022 - years[i]);
+// }
+// console.log(ages);
+
+// // Continue and Break
+// console.log("-----ONLY STRINGS-----");
+// for (let i = 0; i < roshan.length; i++) {
+//   if (typeof roshan[i] !== "string") continue;
+//   console.log(roshan[i], typeof roshan[i]);
+// }
+// console.log("-----BREAK WITH NUMBER-----");
+// for (let i = 0; i < roshan.length; i++) {
+//   if (typeof roshan[i] === "number") break;
+//   console.log(roshan[i], typeof roshan[i]);
+// }
+// // looping backwards
+// const souha = [
+//   "Souha",
+//   "Tourifa",
+//   2022 - 2001,
+//   "Doctor",
+//   ["Ikram", "Zineb", "Roshan"],
+//   true,
+// ];
+
+// for (let i = souha.length - 1; i >= 0; i--) {
+//   console.log(i, souha[i]);
 // }
 
-// Loops 😊
-for (let rep = 1; rep <= 30; rep++) {
-  console.log(`Lifting weights repetition ${rep} 🏋️‍♂️`);
-}
-//loop through the array
-const roshan = [
-  "Muhammad",
-  "Roshan",
-  2022 - 2001,
-  "Developer",
-  ["Guru", "Naushad", "Souha"],
-  true,
-];
-const types = [];
-for (let i = 0; i < roshan.length; i++) {
-  // reading from the jonas array
-  console.log(roshan[i], typeof roshan[i]);
-  // filling the types of array
-  // types[i] = typeof roshan[i];
-  types.push(typeof roshan[i]);
-}
-console.log(types);
+// // loop inside loops
+// for (let exercise = 1; exercise < 4; exercise++) {
+//   console.log(`---starting exercise--- ${exercise}`);
 
-// birthYears
-const years = [2001, 2003, 2004, 2006];
-const ages = [];
+//   for (let rep = 1; rep <= 6; rep++) {
+//     console.log(`Exercise ${exercise}: Lifting weight repetition ${rep} 🏋️‍♂️`);
+//   }
+// }
+// The While Loop
+// let rep = 1;
+// while (rep <= 10) {
+//   console.log(`WHILE: Lifting weights repetition ${rep} 🏋️‍♂️`);
+//   rep++;
+// }
+// roll a dice until you get 6
+// let dice = Math.trunc(Math.random() * 6) + 1;
+// console.log(dice);
 
-for (let i = 0; i < years.length; i++) {
-  ages.push(2022 - years[i]);
-}
-console.log(ages);
-
-// Continue and Break
-console.log("-----ONLY STRINGS-----");
-for (let i = 0; i < roshan.length; i++) {
-  if (typeof roshan[i] !== "string") continue;
-  console.log(roshan[i], typeof roshan[i]);
-}
-console.log("-----BREAK WITH NUMBER-----");
-for (let i = 0; i < roshan.length; i++) {
-  if (typeof roshan[i] === "number") break;
-  console.log(roshan[i], typeof roshan[i]);
-}
-// looping backwards
-const souha = [
-  "Souha",
-  "Tourifa",
-  2022 - 2001,
-  "Doctor",
-  ["Ikram", "Zineb", "Roshan"],
-  true,
-];
-
-for (let i = souha.length - 1; i >= 0; i--) {
-  console.log(i, souha[i]);
-}
-
-// loop inside loops
-for (let exercise = 1; exercise < 4; exercise++) {
-  console.log(`---starting exercise--- ${exercise}`);
-
-  for (let rep = 1; rep <= 6; rep++) {
-    console.log(`Exercise ${exercise}: Lifting weight repetition ${rep} 🏋️‍♂️`);
-  }
+// while (dice !== 6) {
+//   console.log(`You rolled a ${dice}`);
+//   dice = Math.trunc(Math.random() * 6) + 1;
+// }
+let rep = 1;
+while (rep <= 10) {
+  console.log(`WHILE: Lifting rep ${rep}🏋️‍♂️`);
+  rep++;
 }
