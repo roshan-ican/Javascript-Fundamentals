@@ -604,50 +604,75 @@
 // let age = 30;
 // let oldAge = age;
 // age = 32;
-// console.log(age);
-// console.log(oldAge);
+// // console.log(age);
+// // console.log(oldAge);
 
-// const me = {
-//   name: 'Roshan',
-//   age: 32,
+// // const me = {
+// //   name: 'Roshan',
+// //   age: 32,
+// // };
+// // const friend = me;
+// // friend.age = 29;
+// // console.log('friend', friend);
+// // console.log('me', me);
+
+// // Primitive Values vs/ Reference Values
+// // Primivities vs Objects
+// let lastName = 'Sahani';
+// let oldLastName = lastName;
+// lastName = 'Ali';
+// console.log(lastName, oldLastName);
+// // Reference Value
+
+// const Souha = {
+//   firstName: 'Souha',
+//   lastName: 'Tourifia',
+//   age: 19,
 // };
-// const friend = me;
-// friend.age = 29;
-// console.log('friend', friend);
-// console.log('me', me);
+// const marriedSouha = Souha;
+// marriedSouha.lastName = 'Angham Ali';
+// console.log('Before marriage', Souha);
+// console.log('After marriage', marriedSouha);
 
-// Primitive Values vs/ Reference Values
-// Primivities vs Objects
-let lastName = 'Sahani';
-let oldLastName = lastName;
-lastName = 'Ali';
-console.log(lastName, oldLastName);
-// Reference Value
+// // copying object
+// const Souha2 = {
+//   firstName: 'Souha',
+//   lastName: 'Tourifa',
+//   age: 20,
+//   family: ['Mumma', 'Papa'],
+// };
 
-const Souha = {
-  firstName: 'Souha',
-  lastName: 'Tourifia',
-  age: 19,
+// const SouhaCopy = Object.assign({}, Souha2);
+// SouhaCopy.lastName = 'Ali';
+
+// SouhaCopy.family.push('May');
+// SouhaCopy.family.push('Dorsaf');
+// SouhaCopy.family.push('Samar');
+
+// console.log('Before marriage:', Souha2);
+// console.log('After marriage:', SouhaCopy);
+
+//A closer look at the functions
+'use strict';
+const bookings = [];
+const createBooking = function (
+  flightNum,
+  numPassengers = 10,
+  price = 199 * numPassengers
+) {
+  // // ES5 or old way of adding default parameters
+  // numPassengers = numPassengers || 1;
+  // price = price || 199;
+  const booking = {
+    flightNum,
+    numPassengers,
+    price,
+  };
+  console.log(booking);
+  bookings.push(booking);
 };
-const marriedSouha = Souha;
-marriedSouha.lastName = 'Angham Ali';
-console.log('Before marriage', Souha);
-console.log('After marriage', marriedSouha);
-
-// copying object
-const Souha2 = {
-  firstName: 'Souha',
-  lastName: 'Tourifa',
-  age: 20,
-  family: ['Mumma', 'Papa'],
-};
-
-const SouhaCopy = Object.assign({}, Souha2);
-SouhaCopy.lastName = 'Ali';
-
-SouhaCopy.family.push('May');
-SouhaCopy.family.push('Dorsaf');
-SouhaCopy.family.push('Samar');
-
-console.log('Before marriage:', Souha2);
-console.log('After marriage:', SouhaCopy);
+createBooking('LM124');
+createBooking('LM124', 2, 100);
+createBooking('lmfg', 55);
+//to leave a second parameter
+createBooking('LMFG', undefined, 100);
