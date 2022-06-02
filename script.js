@@ -652,27 +652,50 @@
 // console.log('Before marriage:', Souha2);
 // console.log('After marriage:', SouhaCopy);
 
-//A closer look at the functions
-'use strict';
-const bookings = [];
-const createBooking = function (
-  flightNum,
-  numPassengers = 10,
-  price = 199 * numPassengers
-) {
-  // // ES5 or old way of adding default parameters
-  // numPassengers = numPassengers || 1;
-  // price = price || 199;
-  const booking = {
-    flightNum,
-    numPassengers,
-    price,
-  };
-  console.log(booking);
-  bookings.push(booking);
-};
-createBooking('LM124');
-createBooking('LM124', 2, 100);
-createBooking('lmfg', 55);
-//to leave a second parameter
-createBooking('LMFG', undefined, 100);
+// //A closer look at the functions
+// 'use strict';
+// const bookings = [];
+// const createBooking = function (
+//   flightNum,
+//   numPassengers = 10,
+//   price = 199 * numPassengers
+// ) {
+//   // // ES5 or old way of adding default parameters
+//   // numPassengers = numPassengers || 1;
+//   // price = price || 199;
+//   const booking = {
+//     flightNum,
+//     numPassengers,
+//     price,
+//   };
+//   console.log(booking);
+//   bookings.push(booking);
+// };
+// createBooking('LM124');
+// createBooking('LM124', 2, 100);
+// createBooking('lmfg', 55);
+// //to leave a second parameter
+// createBooking('LMFG', undefined, 100);
+
+// // primitives and objects in function
+
+// const flight = 'LM234';
+// const roshan = {
+//   name: 'roshan',
+//   passport: 24783974238498,
+// };
+
+// const checkIn = function (flightNum, passenger) {
+//   flightNum = 'LLS23';
+//   passenger.name = 'Mr. ' + passenger.name;
+//   if (passenger.passport === 24783974238498) {
+//     alert('Check In');
+//   } else {
+//     alert('Wrong passport');
+//   }
+// };
+// checkIn(flight, roshan);
+// console.log(flight);
+// console.log(roshan);
+
+// Higher Order functions
