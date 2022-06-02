@@ -500,6 +500,154 @@
 // const x = '23';
 // if (x === 23) console.log(23);
 
-// const calcAge = birthYear => 2022 - birthYear;
-// console.log(calcAge(2002));
-//Finally DOM Manipulation
+// // const calcAge = birthYear => 2022 - birthYear;
+// // console.log(calcAge(2002));
+// //Finally DOM Manipulation
+// 'use strict';
+// // function calcAge(birthYear) {
+// //   const age = 2022 - birthYear;
+// //   // console.log(firstName);
+// //   function printAge() {
+// //     const output = `${firstName} you are ${age}, born in ${birthYear}`;
+// //     console.log(output);
+// //     //
+// //     if (birthYear >= 1981 && birthYear <= 1996) {
+// //       var millinial = false;
+// //       const str = `Oh, you are a millinial, ${firstName}`;
+// //       console.log(str);
+
+// //       function add(a, b) {
+// //         return a + b;
+// //       }
+// //     }
+// //     // console.log(str);
+// //     console.log(millinial);
+// //     console.log(add(2, 3));
+// //   }
+// //   printAge();
+// //   return age;
+// // }
+// // const firstName = 'Roshan';
+// // calcAge(2001);
+// console.log(me);
+// // console.log(year);
+// // console.log(job);
+// // Hoisting
+// var me = 'Roshan';
+// let year = '2001';
+// const job = 'Software Developer';
+// // Hoisted functions
+// console.log(addDecl(7, 8));
+// // console.log(addExp(8, 7));
+// // console.log(addArrow(7, 7));
+
+// // function
+// function addDecl(a, b) {
+//   return a + b;
+// }
+// // function expression
+// const addExp = function (a, b) {
+//   return a + b;
+// };
+// // Arrow Function
+// const addArrow = (a, b) => a + b;
+// //
+// var addArr = (x, y) => x + y;
+// // undefined(x, y)
+// console.log(numOfProducts);
+// if (!numOfProducts) deleteShoppingCart();
+// var numOfProducts = 10;
+// function deleteShoppingCart() {
+//   console.log('All the Products are deleted');
+// }
+
+// // Regular function vs arrow function
+// const Roshan = {
+//   firstName: 'Roshan',
+//   year: 1991,
+//   calcAge: function () {
+//     console.log(this);
+//     console.log(2022 - this.year);
+//     // const self = this;
+//     // const isMillinial = function () {
+//     //   console.log(this.self >= 2001 && self.year <= 2022);
+//     // };
+//     // solution 2
+//     const isMillinial = function () {
+//       console.log(this);
+//       console.log(this.year >= 1991 && this.year <= 1996);
+//     };
+//     isMillinial();
+//   },
+//   greet: () => {
+//     console.log(this);
+//     console.log(`Hey ${this.firstName}`);
+//   },
+// };
+// Roshan.greet();
+// Roshan.calcAge();
+
+// Arguments keyword
+// const addExp = function (a, b) {
+//   console.log(arguments);
+//   return a + b;
+// };
+// addExp(2, 5);
+// addExp(2, 5, 7, 9);
+
+// var addArrow = (a, b) => {
+//   console.log(arguments);
+//   return a + b;
+// };
+// addArrow(2, 5, 8);
+// Primitive Types
+// let age = 30;
+// let oldAge = age;
+// age = 32;
+// console.log(age);
+// console.log(oldAge);
+
+// const me = {
+//   name: 'Roshan',
+//   age: 32,
+// };
+// const friend = me;
+// friend.age = 29;
+// console.log('friend', friend);
+// console.log('me', me);
+
+// Primitive Values vs/ Reference Values
+// Primivities vs Objects
+let lastName = 'Sahani';
+let oldLastName = lastName;
+lastName = 'Ali';
+console.log(lastName, oldLastName);
+// Reference Value
+
+const Souha = {
+  firstName: 'Souha',
+  lastName: 'Tourifia',
+  age: 19,
+};
+const marriedSouha = Souha;
+marriedSouha.lastName = 'Angham Ali';
+console.log('Before marriage', Souha);
+console.log('After marriage', marriedSouha);
+
+// copying object
+const Souha2 = {
+  firstName: 'Souha',
+  lastName: 'Tourifa',
+  age: 20,
+  family: ['Mumma', 'Papa'],
+};
+
+const SouhaCopy = Object.assign({}, Souha2);
+SouhaCopy.lastName = 'Ali';
+
+SouhaCopy.family.push('May');
+SouhaCopy.family.push('Dorsaf');
+SouhaCopy.family.push('Samar');
+
+console.log('Before marriage:', Souha2);
+console.log('After marriage:', SouhaCopy);
