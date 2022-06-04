@@ -699,3 +699,47 @@
 // console.log(roshan);
 
 // Higher Order functions
+// const oneWord = function (str) {
+//   return str.replace(/ /g, '').toLowerCase();
+// };
+
+// const upperFirstWord = function (str) {
+//   const [first, ...other] = str.split(' ');
+//   return [first.toUpperCase(), ...other].join(' ');
+// };
+// // HIGHER ORDER FUNCTION
+// const transformer = function (str, fn) {
+//   console.log(`Transformed string: ${str}`);
+//   console.log(`Transformed string: ${fn(str)}`);
+
+//   console.log(`Transformed by: ${fn.name}`);
+// };
+// transformer('Javascript is the best!', upperFirstWord);
+// transformer(`Javascript is the best!,`, oneWord);
+
+// // Js uses callbacks all the time
+// const high2 = function () {
+//   console.log('✌');
+// };
+// document.body.addEventListener('click', high2);
+// ['jonas', 'Martha', 'Adam'].forEach(high2);
+
+// a closer look at functions
+'use strict';
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greetHey = greet('Hey');
+greetHey('Jonhn');
+greetHey('Steven');
+
+greet('Hello')('Souha');
+
+// challenge
+const salam = greeting => name => console.log(`${greeting} ${name}`);
+
+salam('Assalam walikum')('Souha');
