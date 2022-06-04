@@ -815,3 +815,13 @@ const boardPassengers = function (n, wait) {
 
 boardPassengers(180, 3);
 console.dir(boardPassengers);
+
+// closure coding challenge
+(function () {
+  const header = document.querySelector('h1');
+  header.style.color = 'red';
+  // this was possible because of closure
+  document.body.addEventListener('click', function () {
+    header.style.color = 'blue';
+  });
+})();
