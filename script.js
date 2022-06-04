@@ -768,3 +768,31 @@ booker();
 
 // internal property of closure
 console.dir(booker);
+
+// Closure examples
+// Example 1
+let f;
+
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+
+g();
+f(); //this function is the first one
+console.dir(f); //dir is how you check the variable environment of closure
+
+// Re-assigned f function
+h();
+f();
+console.dir(f);
+
+// Example 2
