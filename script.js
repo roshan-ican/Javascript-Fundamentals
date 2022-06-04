@@ -727,19 +727,44 @@
 // a closer look at functions
 'use strict';
 
-const greet = function (greeting) {
-  return function (name) {
-    console.log(`${greeting} ${name}`);
+// const greet = function (greeting) {
+//   return function (name) {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
+
+// const greetHey = greet('Hey');
+// greetHey('Jonhn');
+// greetHey('Steven');
+
+// greet('Hello')('Souha');
+
+// // challenge
+// const salam = greeting => name => console.log(`${greeting} ${name}`);
+
+// salam('Assalam walikum')('Souha');
+
+// const lufthansa = {
+//   airline: 'Lufthansa',
+//   iataCode: 'LH',
+//   booking: [],
+// };
+
+// closures
+const secureBooking = function () {
+  // birthplace of a function
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
   };
 };
 
-const greetHey = greet('Hey');
-greetHey('Jonhn');
-greetHey('Steven');
+const booker = secureBooking();
+booker();
+booker();
+booker();
 
-greet('Hello')('Souha');
-
-// challenge
-const salam = greeting => name => console.log(`${greeting} ${name}`);
-
-salam('Assalam walikum')('Souha');
+// internal property of closure
+console.dir(booker);
