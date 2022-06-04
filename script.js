@@ -796,3 +796,22 @@ f();
 console.dir(f);
 
 // Example 2
+// timer
+const boardPassengers = function (n, wait) {
+  const perGroup = n / 3;
+
+  // the function below will be called after 3 seconds
+  setTimeout(function () {
+    console.log(`we are now boarding all ${n} passengers`);
+    console.log(`There are 3 groups, each with ${perGroup} passengers`);
+  }, wait * 1000);
+
+  // this will be called immediately
+  console.log(`will start board in ${wait} seconds`);
+};
+// setTimeout(function () {
+//   console.log('Timer ');
+// }, 2000);
+
+boardPassengers(180, 3);
+console.dir(boardPassengers);
