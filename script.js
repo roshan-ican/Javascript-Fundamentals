@@ -708,120 +708,199 @@
 //   return [first.toUpperCase(), ...other].join(' ');
 // };
 // // HIGHER ORDER FUNCTION
-// const transformer = function (str, fn) {
-//   console.log(`Transformed string: ${str}`);
-//   console.log(`Transformed string: ${fn(str)}`);
+// // const transformer = function (str, fn) {
+// //   console.log(`Transformed string: ${str}`);
+// //   console.log(`Transformed string: ${fn(str)}`);
 
-//   console.log(`Transformed by: ${fn.name}`);
-// };
-// transformer('Javascript is the best!', upperFirstWord);
-// transformer(`Javascript is the best!,`, oneWord);
+// //   console.log(`Transformed by: ${fn.name}`);
+// // };
+// // transformer('Javascript is the best!', upperFirstWord);
+// // transformer(`Javascript is the best!,`, oneWord);
 
-// // Js uses callbacks all the time
-// const high2 = function () {
-//   console.log('✌');
-// };
-// document.body.addEventListener('click', high2);
-// ['jonas', 'Martha', 'Adam'].forEach(high2);
+// // // Js uses callbacks all the time
+// // const high2 = function () {
+// //   console.log('✌');
+// // };
+// // document.body.addEventListener('click', high2);
+// // ['jonas', 'Martha', 'Adam'].forEach(high2);
 
-// a closer look at functions
-'use strict';
+// // a closer look at functions
+// 'use strict';
 
-// const greet = function (greeting) {
-//   return function (name) {
-//     console.log(`${greeting} ${name}`);
+// // const greet = function (greeting) {
+// //   return function (name) {
+// //     console.log(`${greeting} ${name}`);
+// //   };
+// // };
+
+// // const greetHey = greet('Hey');
+// // greetHey('Jonhn');
+// // greetHey('Steven');
+
+// // greet('Hello')('Souha');
+
+// // // challenge
+// // const salam = greeting => name => console.log(`${greeting} ${name}`);
+
+// // salam('Assalam walikum')('Souha');
+
+// // const lufthansa = {
+// //   airline: 'Lufthansa',
+// //   iataCode: 'LH',
+// //   booking: [],
+// // };
+
+// // closures
+// const secureBooking = function () {
+//   // birthplace of a function
+//   let passengerCount = 0;
+
+//   return function () {
+//     passengerCount++;
+//     console.log(`${passengerCount} passengers`);
 //   };
 // };
 
-// const greetHey = greet('Hey');
-// greetHey('Jonhn');
-// greetHey('Steven');
+// const booker = secureBooking();
+// booker();
+// booker();
+// booker();
 
-// greet('Hello')('Souha');
+// // internal property of closure
+// console.dir(booker);
 
-// // challenge
-// const salam = greeting => name => console.log(`${greeting} ${name}`);
+// // Closure examples
+// // Example 1
+// let f;
 
-// salam('Assalam walikum')('Souha');
-
-// const lufthansa = {
-//   airline: 'Lufthansa',
-//   iataCode: 'LH',
-//   booking: [],
+// const g = function () {
+//   const a = 23;
+//   f = function () {
+//     console.log(a * 2);
+//   };
+// };
+// const h = function () {
+//   const b = 777;
+//   f = function () {
+//     console.log(b * 2);
+//   };
 // };
 
-// closures
-const secureBooking = function () {
-  // birthplace of a function
-  let passengerCount = 0;
+// g();
+// f(); //this function is the first one
+// console.dir(f); //dir is how you check the variable environment of closure
 
-  return function () {
-    passengerCount++;
-    console.log(`${passengerCount} passengers`);
-  };
+// // Re-assigned f function
+// h();
+// f();
+// console.dir(f);
+
+// // Example 2
+// // timer
+// const boardPassengers = function (n, wait) {
+//   const perGroup = n / 3;
+
+//   // the function below will be called after 3 seconds
+//   setTimeout(function () {
+//     console.log(`we are now boarding all ${n} passengers`);
+//     console.log(`There are 3 groups, each with ${perGroup} passengers`);
+//   }, wait * 1000);
+
+//   // this will be called immediately
+//   console.log(`will start board in ${wait} seconds`);
+// };
+// // setTimeout(function () {
+// //   console.log('Timer ');
+// // }, 2000);
+
+// boardPassengers(180, 3);
+// console.dir(boardPassengers);
+
+// // closure coding challenge
+// (function () {
+//   const header = document.querySelector('h1');
+//   header.style.color = 'red';
+//   // this was possible because of closure
+//   document.body.addEventListener('click', function () {
+//     header.style.color = 'blue';
+//   });
+// })();
+// OOP in javascript
+//Looping
+// function multiplyAll(arr) {
+//   let product = 1;
+
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = 0; i < arr[i].length; j++) {
+//       // console.log(arr[i][j]);
+//     }
+//   }
+//   return product;
+// }
+'use strict';
+const Person = function (firstName, birthYear) {
+  console.log(this);
+  this.firstName = firstName;
+  this.birthYear = birthYear;
 };
 
-const booker = secureBooking();
-booker();
-booker();
-booker();
+new Person('Jonas', 1991);
 
-// internal property of closure
-console.dir(booker);
+// 1.New {} is created
+// 2.function is called, this = {}
+// 3. {} linked is prototype
+// 4. function automatically return {}
 
-// Closure examples
-// Example 1
-let f;
+const souha = new Person('Souha', 2003);
+const roshan = new Person('Roshan', 2002);
+console.log(souha, roshan);
 
-const g = function () {
-  const a = 23;
-  f = function () {
-    console.log(a * 2);
-  };
+console.log(souha instanceof Person);
+
+// Prototypes
+console.log(Person.prototype);
+Person.prototype.calcAge = function () {
+  console.log(2022 - this.birthYear);
 };
-const h = function () {
-  const b = 777;
-  f = function () {
-    console.log(b * 2);
-  };
+souha.calcAge();
+roshan.calcAge();
+
+console.log(souha.__proto__);
+console.log(souha.__proto__ === Person.prototype);
+
+console.log(Person.prototype.isPrototypeOf(souha));
+console.log(Person.prototype.isPrototypeOf(roshan));
+console.log(Person.prototype.isPrototypeOf(Person));
+
+// setting properties on prototype not only methods
+Person.prototype.species = 'Homo Sapiens';
+console.log(souha.species, roshan.species);
+
+// checking the property
+console.log(souha.hasOwnProperty('firstName'));
+console.log(souha.hasOwnProperty('species'));
+
+console.log(souha.__proto__);
+// Object.prototype (top of prototype chain)
+console.log(souha.__proto__.__proto__);
+console.log(souha.__proto__.__proto__.__proto__);
+
+console.dir(Person.prototype.constructor);
+
+// prototype in arrys
+const arr = [23, 23, 4, 434, 34, 4];
+console.log(arr.__proto__);
+console.log(arr.__proto__ === Array.prototype);
+
+console.log(arr.__proto__.__proto__);
+
+Array.prototype.unique = function () {
+  return [...new Set(this)];
 };
+console.log(arr.unique());
 
-g();
-f(); //this function is the first one
-console.dir(f); //dir is how you check the variable environment of closure
+// doing some fun with built-in methods
+const h1 = document.querySelector('h1');
+console.dir(x => x + 1);
 
-// Re-assigned f function
-h();
-f();
-console.dir(f);
-
-// Example 2
-// timer
-const boardPassengers = function (n, wait) {
-  const perGroup = n / 3;
-
-  // the function below will be called after 3 seconds
-  setTimeout(function () {
-    console.log(`we are now boarding all ${n} passengers`);
-    console.log(`There are 3 groups, each with ${perGroup} passengers`);
-  }, wait * 1000);
-
-  // this will be called immediately
-  console.log(`will start board in ${wait} seconds`);
-};
-// setTimeout(function () {
-//   console.log('Timer ');
-// }, 2000);
-
-boardPassengers(180, 3);
-console.dir(boardPassengers);
-
-// closure coding challenge
-(function () {
-  const header = document.querySelector('h1');
-  header.style.color = 'red';
-  // this was possible because of closure
-  document.body.addEventListener('click', function () {
-    header.style.color = 'blue';
-  });
-})();
+// ES6 classes
