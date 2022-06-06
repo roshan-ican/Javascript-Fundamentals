@@ -932,3 +932,26 @@ PersonCl.prototype.greet = function () {
   console.log(`Hey ${this.firstName}`);
 };
 deniz.greet();
+
+// Object.create
+
+const PersonProto = {
+  calcAge() {
+    console.log(2022 - this.birthYear);
+  },
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+const roshan = Object.create(PersonProto);
+console.log(roshan);
+roshan.name = 'Roshan';
+roshan.birthYear = 2002;
+roshan.calcAge();
+
+console.log(roshan.__proto__ === PersonProto);
+
+const souha = Object.create(PersonProto);
+souha.init('Souha', 2003);
+souha.calcAge();
