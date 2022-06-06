@@ -838,69 +838,97 @@
 //   return product;
 // }
 'use strict';
-const Person = function (firstName, birthYear) {
-  console.log(this);
-  this.firstName = firstName;
-  this.birthYear = birthYear;
-};
+// const Person = function (firstName, birthYear) {
+//   console.log(this);
+//   this.firstName = firstName;
+//   this.birthYear = birthYear;
+// };
 
-new Person('Jonas', 1991);
+// new Person('Jonas', 1991);
 
-// 1.New {} is created
-// 2.function is called, this = {}
-// 3. {} linked is prototype
-// 4. function automatically return {}
+// // 1.New {} is created
+// // 2.function is called, this = {}
+// // 3. {} linked is prototype
+// // 4. function automatically return {}
 
-const souha = new Person('Souha', 2003);
-const roshan = new Person('Roshan', 2002);
-console.log(souha, roshan);
+// const souha = new Person('Souha', 2003);
+// const roshan = new Person('Roshan', 2002);
+// console.log(souha, roshan);
 
-console.log(souha instanceof Person);
+// console.log(souha instanceof Person);
 
-// Prototypes
-console.log(Person.prototype);
-Person.prototype.calcAge = function () {
-  console.log(2022 - this.birthYear);
-};
-souha.calcAge();
-roshan.calcAge();
+// // Prototypes
+// console.log(Person.prototype);
+// Person.prototype.calcAge = function () {
+//   console.log(2022 - this.birthYear);
+// };
+// souha.calcAge();
+// roshan.calcAge();
 
-console.log(souha.__proto__);
-console.log(souha.__proto__ === Person.prototype);
+// console.log(souha.__proto__);
+// console.log(souha.__proto__ === Person.prototype);
 
-console.log(Person.prototype.isPrototypeOf(souha));
-console.log(Person.prototype.isPrototypeOf(roshan));
-console.log(Person.prototype.isPrototypeOf(Person));
+// console.log(Person.prototype.isPrototypeOf(souha));
+// console.log(Person.prototype.isPrototypeOf(roshan));
+// console.log(Person.prototype.isPrototypeOf(Person));
 
-// setting properties on prototype not only methods
-Person.prototype.species = 'Homo Sapiens';
-console.log(souha.species, roshan.species);
+// // setting properties on prototype not only methods
+// Person.prototype.species = 'Homo Sapiens';
+// console.log(souha.species, roshan.species);
 
-// checking the property
-console.log(souha.hasOwnProperty('firstName'));
-console.log(souha.hasOwnProperty('species'));
+// // checking the property
+// console.log(souha.hasOwnProperty('firstName'));
+// console.log(souha.hasOwnProperty('species'));
 
-console.log(souha.__proto__);
-// Object.prototype (top of prototype chain)
-console.log(souha.__proto__.__proto__);
-console.log(souha.__proto__.__proto__.__proto__);
+// console.log(souha.__proto__);
+// // Object.prototype (top of prototype chain)
+// console.log(souha.__proto__.__proto__);
+// console.log(souha.__proto__.__proto__.__proto__);
 
-console.dir(Person.prototype.constructor);
+// console.dir(Person.prototype.constructor);
 
-// prototype in arrys
-const arr = [23, 23, 4, 434, 34, 4];
-console.log(arr.__proto__);
-console.log(arr.__proto__ === Array.prototype);
+// // prototype in arrys
+// const arr = [23, 23, 4, 434, 34, 4];
+// console.log(arr.__proto__);
+// console.log(arr.__proto__ === Array.prototype);
 
-console.log(arr.__proto__.__proto__);
+// console.log(arr.__proto__.__proto__);
 
-Array.prototype.unique = function () {
-  return [...new Set(this)];
-};
-console.log(arr.unique());
+// Array.prototype.unique = function () {
+//   return [...new Set(this)];
+// };
+// console.log(arr.unique());
 
-// doing some fun with built-in methods
-const h1 = document.querySelector('h1');
-console.dir(x => x + 1);
+// // doing some fun with built-in methods
+// const h1 = document.querySelector('h1');
+// console.dir(x => x + 1);
 
 // ES6 classes
+'use strict';
+// class expression
+// class personCl = class {}
+
+// class declaration
+class PersonCl {
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+  // Methods will be added to .prototype property
+  calcAge() {
+    console.log(2031 - this.birthYear);
+  }
+  greet() {
+    console.log(`Hey ${this.firstName}`);
+  }
+}
+const deniz = new PersonCl('Deniz', 2028);
+console.log(deniz);
+deniz.calcAge();
+
+console.log(deniz.__proto__ === PersonCl.prototype);
+
+PersonCl.prototype.greet = function () {
+  console.log(`Hey ${this.firstName}`);
+};
+deniz.greet();
