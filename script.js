@@ -935,23 +935,159 @@ deniz.greet();
 
 // Object.create
 
-const PersonProto = {
-  calcAge() {
-    console.log(2022 - this.birthYear);
-  },
-  init(firstName, birthYear) {
-    this.firstName = firstName;
-    this.birthYear = birthYear;
-  },
+// const PersonProto = {
+//   calcAge() {
+//     console.log(2022 - this.birthYear);
+//   },
+//   init(firstName, birthYear) {
+//     this.firstName = firstName;
+//     this.birthYear = birthYear;
+//   },
+// };
+// const roshan = Object.create(PersonProto);
+// console.log(roshan);
+// roshan.name = 'Roshan';
+// roshan.birthYear = 2002;
+// roshan.calcAge();
+
+// console.log(roshan.__proto__ === PersonProto);
+
+// const souha = Object.create(PersonProto);
+// souha.init('Souha', 2003);
+// souha.calcAge();
+
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
 };
-const roshan = Object.create(PersonProto);
+
+Person.prototype.calcAge = function () {
+  console.log(2022 - this.birthYear);
+};
+
+const Student = function (firstName, birthYear, course) {
+  Person.call(this, firstName, birthYear);
+  this.course = course;
+};
+
+Student.prototype = Object.create(Person.prototype);
+// Linking prototypes
+Student.prototype.introduce = function () {
+  console.log(`My Name is ${this.firstName} and I study ${this.course}`);
+};
+//
+const roshan = new Student('Roshan', 2001, 'Computer Science');
 console.log(roshan);
-roshan.name = 'Roshan';
-roshan.birthYear = 2002;
+roshan.introduce();
 roshan.calcAge();
 
-console.log(roshan.__proto__ === PersonProto);
-
-const souha = Object.create(PersonProto);
-souha.init('Souha', 2003);
+const souha = new Student('Souha', 2003, 'Medicine');
+console.log(souha);
+souha.introduce();
 souha.calcAge();
+
+console.log(roshan instanceof Student);
+console.log(roshan instanceof Person);
+
+Student.prototype.constructor = Student;
+console.dir(Student.prototype.constructor);
+
+// Arrays
+// Data needed for a later exercise
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+// Data needed for first part of the section
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  // order function
+
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+  ordrer: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  orderDelivery: function ({ starterIndex = 1, mainIndex = 1, time, address }) {
+    console.log(
+      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time} sir/madam!`
+    );
+  },
+};
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via del Sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+
+// Objects destructed
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+// Default values
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+// Mutating variables
+let x = 111;
+let y = 999;
+const obj = { x: 23, y: 22, z: 23 };
+({ x, y } = obj);
+console.log(x, y);
+
+// Nested objects
+const {
+  fri: { open, close },
+} = openingHours;
+console.log(open, close);
+
+// // array destructed
+// const arr = [2, 3, 4];
+// const [a, b, c] = arr;
+// console.log(a, b, c);
+
+// let [main, secondary] = restaurant.categories;
+// console.log(main, secondary);
+// // switching variables using destructuring
+// [main, secondary] = [secondary, main];
+// console.log(main, secondary);
+
+// // Receive 2 return values from a function
+// const [starter, mainCourse] = restaurant.ordrer(2, 0);
+// console.log(starter, mainCourse);
+
+// // nested array
+// const nested = [2, 4, [5, 6]];
+// // remember that we do not want in the middle
+// // destructure inside destructure
+
+// const [i, , [j, k]] = nested;
+// console.log(i, j, k);
+
+// // Default Values
+// const [p = 1, q = 1, r = 1] = [9, 3];
+// console.log(p, q, r);
