@@ -1029,41 +1029,105 @@ const restaurant = {
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time} sir/madam!`
     );
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Your delicious pasta with ${ing1},
+       ${ing2} and ${ing3}`
+    );
+  },
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
-restaurant.orderDelivery({
-  time: '22:30',
-  address: 'Via del Sole, 21',
-  mainIndex: 2,
-  starterIndex: 2,
-});
+// Spread Operator
+// const arr = [6, 4, 2];
+// const badNewarr = [1, 2, arr[0], arr[1], arr[2]];
+// // console.log(badNewarr);
 
-// Objects destructed
-const { name, openingHours, categories } = restaurant;
-console.log(name, openingHours, categories);
+// const newArr = [1, 2, ...arr];
+// console.log(newArr);
+// console.log(...newArr);
 
-const {
-  name: restaurantName,
-  openingHours: hours,
-  categories: tags,
-} = restaurant;
-console.log(restaurantName, hours, tags);
+// // copying array
+// const mainMenuCopy = [...restaurant.mainMenu];
+// // Joining 2 arrays
+// const menu = [...mainMenuCopy, ...restaurant.starterMenu];
+// console.log(menu);
 
-// Default values
-const { menu = [], starterMenu: starters = [] } = restaurant;
-console.log(menu, starters);
+// // Iterables are strings, arrays, maps and sets but not Objects
 
-// Mutating variables
-let x = 111;
-let y = 999;
-const obj = { x: 23, y: 22, z: 23 };
-({ x, y } = obj);
-console.log(x, y);
+// // We can only use spread operator when building a array or when we passing arguments to a function
+// // const str = 'Roshan';
+// // const letters = [...str, ' ', 'S.'];
+// // console.log(letters);
+// // console.log(...str);
 
-// Nested objects
-const {
-  fri: { open, close },
-} = openingHours;
-console.log(open, close);
+// // const ingredients = [
+// //   prompt("Let's make Pasta! Ingredient 1?"),
+// //   prompt('Ingredient 2?'),
+// //   prompt('Ingredient 3?'),
+// // ];
+// // console.log(ingredients);
+// // passing argument with the spread operator
+// // restaurant.orderPasta(...ingredients);
+
+// // Objects
+// const newRestaurent = { FoundedIn: 1988, ...restaurant, founder: 'Guiseppe' };
+// console.log(newRestaurent);
+// // Rest operatpor in Objects
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(weekdays);
+
+// // Functions Rest Operators
+// const add = function (...numbers) {
+//   // console.log(numbers);
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+//   console.log(sum);
+// };
+// add(2, 3);
+// add(5, 3, 4, 6);
+// add(3, 6, 6, 9, 7, 9);
+// // Order pizza
+
+// restaurant.orderPasta('mushrooms', 'onion', 'beef', 'spinach');
+// restaurant.orderPizza('mushrooms');
+
+// // restaurant.orderDelivery({
+// //   time: '22:30',
+// //   address: 'Via del Sole, 21',
+// //   mainIndex: 2,
+// //   starterIndex: 2,
+// // });
+
+// // Objects destructed
+// // const { name, openingHours, categories } = restaurant;
+// // console.log(name, openingHours, categories);
+
+// // const {
+// //   name: restaurantName,
+// //   openingHours: hours,
+// //   categories: tags,
+// // } = restaurant;
+// // console.log(restaurantName, hours, tags);
+
+// // // Default values
+// // const { menu = [], starterMenu: starters = [] } = restaurant;
+// // console.log(menu, starters);
+
+// // // Mutating variables
+// // let x = 111;
+// // let y = 999;
+// // const obj = { x: 23, y: 22, z: 23 };
+// // ({ x, y } = obj);
+// // console.log(x, y);
+
+// // Nested objects
+// const {
+//   fri: { open, close },
+// } = openingHours;
+// console.log(open, close);
 
 // // array destructed
 // const arr = [2, 3, 4];
