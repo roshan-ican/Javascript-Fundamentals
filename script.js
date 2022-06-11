@@ -1264,3 +1264,138 @@ for (const [min, event] of gameEvents) {
 }
 
 // Strings methods
+
+const airline = `Tap Air India`;
+
+console.log(airline.length);
+console.log('SOUHA'.length);
+
+console.log(airline.indexOf('a'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('India'));
+
+// Substring
+console.log(airline.slice(4));
+
+// Primitives are immutable
+console.log(airline.slice(4, 7));
+
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('You got the middle seat 😊');
+  else console.log('You got lucky 😎');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+checkMiddleSeat('Z');
+checkMiddleSeat('d');
+
+function correctCase(name) {
+  const nameLower = name.toLowerCase();
+  const nameCorrect = nameLower[0].toUpperCase() + nameLower.slice(1);
+  console.log(nameCorrect);
+}
+correctCase('rOshan');
+
+// Removing the white spaces
+function loginEmail(email) {
+  const normalizedEmail = email.toLowerCase().trim();
+  console.log(normalizedEmail);
+}
+
+loginEmail('RoShansahnai535@gmail.com');
+
+// Replacing
+const priceINR = '244,23₹';
+const priceUS = priceINR.replace('₹', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement = `All the passengers come to boarding door 23, boarding door 23`;
+console.log(announcement.replaceAll('door', 'gate'));
+
+// Practice Airport exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (
+    baggage.includes('knife') ||
+    baggage.includes('drugs') ||
+    baggage.includes('gun')
+  ) {
+    console.log('You are NOT allowed on board');
+  } else {
+    console.log('Welcome aboard');
+  }
+};
+
+checkBaggage('I have a laptop, some Food and a pocket Knife');
+checkBaggage('Socks and camera and drugs');
+checkBaggage('Got some snacks and a gun for protection');
+
+checkBaggage('I have some clothes and my laptop ');
+
+// startwith and endswith
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320'));
+console.log(plane.includes('Boeing'));
+console.log(plane.startsWith('Airb'));
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('Part of the New Airbus family');
+}
+
+// Split returns a array
+console.log('a+very+nice+string'.split('+'));
+console.log('Muhammad Roshan'.split(' '));
+
+const [firstName, lastName] = 'Muhammad Roshan'.split(' ');
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+// Capitalize
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+  for (const n of names) {
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+};
+
+const passenger = 'jessica ann smith davis';
+capitalizeName['Jonas schmedtmann'];
+
+// padding
+const message = 'Go to gate 23';
+console.log(message.padStart(20, '+').padEnd(30, '+'));
+console.log('Jonas'.padStart(20, '+').padEnd(30, '+'));
+
+// your credit card should be hidden
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+console.log(maskCreditCard(87987946));
+console.log(maskCreditCard(9879865465789465794));
+console.log(maskCreditCard(879879464846546578465));
+
+// Repeat
+const message2 = 'Bad Weather... All Departures';
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'✈'.repeat(n)}`);
+};
+planesInLine(2);
+planesInLine(3);
+planesInLine(4);
+planesInLine(5);
+planesInLine(6);
+planesInLine(12);
+planesInLine(6);
+planesInLine(5);
+planesInLine(4);
+planesInLine(3);
+planesInLine(2);
