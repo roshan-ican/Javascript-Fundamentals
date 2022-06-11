@@ -1040,6 +1040,16 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+// for (const item of menu.entries) console.log(item);
+
+// Destructured in a for of loop
+for (let [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
 // Spread Operator
 // const arr = [6, 4, 2];
 // const badNewarr = [1, 2, arr[0], arr[1], arr[2]];
@@ -1155,3 +1165,102 @@ const restaurant = {
 // // Default Values
 // const [p = 1, q = 1, r = 1] = [9, 3];
 // console.log(p, q, r);
+
+// Coding challenge
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+// Return the goals scored by the players
+let goals = game.scored;
+
+for (let [g, p] of goals.entries()) {
+  console.log(`Goal ${g + 1}: ${p}`);
+}
+
+// calculate avergage
+const odds = Object.values(game.odds);
+let average = 0;
+for (let odd of Object.values(game.odds)) average += odd;
+average /= odds.length;
+console.log(average);
+
+//3. Print both team and the odds
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr} ${odd}`);
+}
+
+const gameEvents = new Map([
+  [17, '⚽️ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽️ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽️ GOAL'],
+  [80, '⚽️ GOAL'],
+  [92, '🔶 Yellow card'],
+]);
+
+// 1.
+const events = [...new Set(gameEvents.values())];
+console.log(events);
+
+// 2. unfair yellow card
+gameEvents.delete(64);
+
+// 3
+
+const time = [...gameEvents.keys()].pop();
+console.log(time);
+console.log(
+  `An event happened, on average, every ${92 / gameEvents.size} minutes`
+);
+// 4
+for (const [min, event] of gameEvents) {
+  const half = min <= 45 ? 'FIRST' : 'SECOND';
+  console.log(`[ ${half} HALF] ${min} : ${event}`);
+}
+
+// Strings methods
